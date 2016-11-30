@@ -32,9 +32,9 @@ public class ControleCarro implements Serializable {
         objeto = new Carro();
     }
     
-    public void alterar(Integer id){
+    public void alterar(String modelo){
       try {
-            objeto = dao.getObjectById(id); 
+            objeto = dao.getObjectById(modelo); 
             editando = true;
         } catch (Exception e){
             Util.mensagemErro("Erro ao recuperar objeto: "+Util.geMensagemErro(e));            
@@ -42,9 +42,9 @@ public class ControleCarro implements Serializable {
         
     }
     
-    public void excluir(Integer id){
+    public void excluir(String modelo){
        try {
-            objeto = dao.getObjectById(id);
+            objeto = dao.getObjectById(modelo);
             dao.remove(objeto);
             Util.mensagemInformacao("Objeto removido com sucesso!");            
         } catch(Exception e){
